@@ -58,7 +58,7 @@
 
       <div id="card-gallery-bottom-section">
         <div id="left-section">
-          <video class="video-mask">
+          <video class="video-mask" autoplay="" muted="" loop="">
             <!-- <source src="woman-drinking-coffee.mp4" type="video/mp4" /> -->
             <source src="/woman-drinking-coffee.mp4" type="video/mp4" />
           </video>
@@ -66,15 +66,18 @@
         <div id="right-section">
           <h3 class="right-section-about">ABOUT</h3>
           <h2 class="right-section-inner">Crafted Coffee's</h2>
+          <br /><br /><br />
+          <p class="about-text">
+            <br />
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            dolores.
+          </p>
+          <br />
+          <p class="about-text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
+            dolores.
+          </p>
           <br /><br />
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-            dolores.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,
-            dolores.
-          </p>
           <a href="#">LEARN MORE</a>
         </div>
       </div>
@@ -519,10 +522,10 @@
               they live in Bookmarksgrove right at the coast of the Semantics, a
               large language ocean. ”
             </p>
-            <div class="testimonial-top-inner">
+            <div class="test">
               <img src="/img/3.jpeg" />
               <h3 class="testimonial-border">Robort Webb</h3>
-              <img
+              <!-- <img
                 class="icon"
                 style="width: 20px"
                 src="/img/instagram-red.svg"
@@ -531,7 +534,7 @@
                 class="icon"
                 style="width: 20px"
                 src="/img/facebook-red.svg"
-              />
+              /> -->
             </div>
           </div>
 
@@ -542,10 +545,10 @@
               they live in Bookmarksgrove right at the coast of the Semantics, a
               large language ocean. ”
             </p>
-            <div class="testimonial-bottom-inner">
+            <div class="test">
               <img src="/img/Cafe1.jpg" />
               <h3 class="testimonial-border-left">Robort Webb</h3>
-              <img
+              <!-- <img
                 class="icon"
                 style="width: 20px"
                 src="/img/instagram-red.svg"
@@ -554,7 +557,7 @@
                 class="icon"
                 style="width: 20px"
                 src="/img/facebook-red.svg"
-              />
+              /> -->
               <i></i>
             </div>
           </div>
@@ -591,15 +594,26 @@
           ></iframe>
         </div>
       </div>
+
       <div class="section-9-right">
-        <div class="open-hour zoom">
+        <div class="container">
+          <div class="child bg-one" style="height: 600px">
+            <h3 style="margin: 0">O P E N H O U R S</h3>
+            <p>Monday: Closed</p>
+            <p>Thesday to Friday</p>
+            <p>7:00 AM 9:00 AM</p>
+            <p>Saturday to Sunday</p>
+            <p>7:00 AM 9:00 AM</p>
+          </div>
+        </div>
+        <!-- <div class="open-hour">
           <h3>O P E N H O U R S</h3>
           <span>Monday: Closed</span><br /><br />
           <span>Thesday to Friday</span>
           <p>7:00 AM 9:00 AM</p>
           <span>Saturday to Sunday</span>
           <p>7:00 AM 9:00 AM</p>
-        </div>
+        </div> -->
       </div>
     </section>
 
@@ -607,7 +621,7 @@
 
     <!-- section 9 -->
     <section class="section-10">
-      <div class="section-10-icon" style="padding: 20px;">
+      <div class="section-10-icon" style="padding: 20px">
         <img src="/img/facebook.svg" style="width: 30px; height: 30px" />
         <img src="/img/facebook.svg" style="width: 30px; height: 30px" />
         <img src="/img/google.svg" style="width: 30px; height: 30px" />
@@ -634,7 +648,7 @@
       document.getElementById("button-1").classList.add("circle");
       document.getElementById("button-2").classList.remove("circle");
       document.getElementById("snak").style.display = "none";
-    document.getElementById("hot-drink").style.display = "block";
+      document.getElementById("hot-drink").style.display = "block";
     }
 
     function switchRightButton() {
@@ -642,7 +656,25 @@
       document.getElementById("button-2").classList.add("circle");
       document.getElementById("button-1").classList.remove("circle");
       document.getElementById("hot-drink").style.display = "none";
-    document.getElementById("snak").style.display = "block";
+      document.getElementById("snak").style.display = "block";
+    }
+
+    // testimonial
+    let counter = 0;
+    let elements = document.getElementsByClassName("test");
+    setInterval(myfunction, 1000);
+
+    function myfunction() {
+      elements[counter].style.display = "block";
+      for (let i = 0; i < elements.length; i++) {
+        if (i != counter) {
+          elements[i].style.display = "none";
+        }
+      }
+      counter++;
+      if (counter >= 2) {
+        counter = 0;
+      }
     }
   </script>
 </html>
